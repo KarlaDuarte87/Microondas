@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-ondas Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="microondas">
+        <h1>Micro-ondas Digital</h1>
+        <div id="display">Display aqui</div>
+        <input type="text" id="input" placeholder="Digite o tempo ou use o teclado numérico">
+        <div class="numeric-keypad">
+            <button onclick="enterNumber(1)">1</button>
+            <button onclick="enterNumber(2)">2</button>
+            <button onclick="enterNumber(3)">3</button>
+            <button onclick="enterNumber(4)">4</button>
+            <button onclick="enterNumber(5)">5</button>
+            <button onclick="enterNumber(6)">6</button>
+            <button onclick="enterNumber(7)">7</button>
+            <button onclick="enterNumber(8)">8</button>
+            <button onclick="enterNumber(9)">9</button>
+            <button onclick="enterNumber(0)">0</button>
+        </div>
+        <div class="controls">
+            <button onclick="setPower()">Potência</button>
+            <button onclick="startHeating()">Início</button>
+            <button onclick="pauseOrCancel()">Pausar/Cancelar</button>
+            <button onclick="showPrograms()">Programas</button>
+        </div>
+        <div id="status"></div>
+    </div>
+    <script src="scripts.js"></script>
+    <script src="api.js"></script>
+</body>
+</html>
