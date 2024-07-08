@@ -33,37 +33,12 @@
                     <td>
                         <div class="d-grid gap-2 d-md-block">
                             <a class="btn btn-warning" role="button" asp-route-id="@programa.Id" asp-controller="Home" asp-action="EditarPrograma">Editar</a>
-
-                            <!-- botão de confirmacao para apagar -->
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Apagar
-                            </button>
-
-                            <!-- config desse botão -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Atenção!</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Deseja Realmente apagar o programa @programa.Nome?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
-                                            <button type="button" asp-route-id="@programa.Id"  class="btn btn-primary">Sim</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </td>
+                            <a class="btn btn-danger role="button" asp-route-id="@programa.Id" asp-controller="Home" asp-action="ApagarConfirmacao">Apagar</a>
                 </tr>
-                        
+
                 }
             }
+                
         </tbody>
     </table>
     <a class="btn btn-secondary" role="button" asp-controller="Home" asp-action="Index">Voltar</a>

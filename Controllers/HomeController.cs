@@ -41,22 +41,34 @@ namespace Microondas_Digital.Controllers
             return View(programa);
         }
 
+
+        public IActionResult ApagarConfirmacao(int id)
+        {
+            Programas programa = _programaRepositorio.ListarPorId(id);
+
+            return View(programa);
+        }
+
+
+        public IActionResult Apagar(int id)
+        {
+            _programaRepositorio.Apagar(id);
+            return RedirectToAction("VerProgramas");
+        }
+
         [HttpPost]
         public IActionResult CadastrarPrograma(Programas programas)
         {
             _programaRepositorio.Adicionar(programas);
             return RedirectToAction("Index");
         }
-
-
-
+       
         [HttpPost]
         public IActionResult AlterarPrograma(Programas programas)
         {
             _programaRepositorio.Atualizar(programas);
             return RedirectToAction("Index");
         }
-
 
 
 

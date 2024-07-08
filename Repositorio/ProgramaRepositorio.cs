@@ -48,6 +48,17 @@ namespace Microondas_Digital.Repositorio
             return programaDB;
         }
 
+        public bool Apagar(int id)
+        {
+            Programas programaDB = ListarPorId(id);
 
+            if (programaDB == null) throw new System.Exception("Houve um erro ao deletar o programa");
+
+
+            _bancoContext.Programas.Remove(programaDB);
+            _bancoContext.SaveChanges();
+
+            return (true);
+        }
     }
 }

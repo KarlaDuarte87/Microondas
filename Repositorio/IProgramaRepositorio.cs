@@ -10,5 +10,7 @@ namespace Microondas_Digital.Repositorio
         List<Programas> BuscarTodos();
         Programas Adicionar(Programas programa);
         Programas Atualizar(Programas programa);
+
+        bool Apagar(int id);
     }
 }
