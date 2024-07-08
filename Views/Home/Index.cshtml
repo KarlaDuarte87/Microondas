@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Microondas Digital";
+}
+<div class="text-center">
+    <form>
+        <div class="tempo">
+            <label for="label-tempo" class="form-label">Tempo</label>
+            <input type="text" class="form-control" placeholder="Digite o tempo">
+        </div>
+
+        <div class="potencia">
+            <br /><label for="label-potencia" class="form-label">Selecione a potência</label> <br />
+            <select class="select-potencia" aria-label="Default select example">
+                <option selected>10</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </div>
+
+        <div class="programa">
+            <br /><label for="label-programa" class="form-label">Selecione o Programa</label><br />
+            <select class="select-programa" aria-label="Default select example">
+                <option value="1">Pipoca</option>
+                <option value="2">Leite</option>
+                <option value="3">Carnes de boi</option>
+                <option value="4">Frango</option>
+                <option value="5">Feijão</option>
+                <option value="6"></option>
+            </select>
+        </div>
+
+        <div class="d-grid gap-2">
+            <br /><button class="btn btn-warning" type="button">Iniciar/+30s</button>
+            <button class="btn btn-danger" type="button">Cancelar/Pausar</button>
+            <a class="btn btn-success" role="button" asp-controller="Home" asp-action="VerProgramas">Ver Programas</a>
+            <a class="btn btn-primary" role="button" asp-controller="Home" asp-action="CadastrarPrograma">Cadastrar Programas</a>
+        </div>
+    </form>
+   
+</div>
+

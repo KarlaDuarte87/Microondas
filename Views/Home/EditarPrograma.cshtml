@@ -1,0 +1,57 @@
+﻿@model Programas
+
+@{
+    ViewData["Title"] = "Editar Programas";
+}
+<div class="text-center">
+   <h1>Editar Programas</h1>
+</div>
+
+
+<form asp-controller="Home" asp-action="AlterarPrograma" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+    <div class="tempo">
+        <label for="label-tempo" class="form-label">Nome<span style="color: red;">*</span></label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o Nome">
+    </div>
+    <div class="tempo">
+        <label for="label-tempo" class="form-label">Alimento<span style="color: red;">*</span></label>
+        <input type="text" asp-for="Comida" class="form-control" placeholder="Digite o Alimento">
+    </div>
+    <div class="tempo">
+        <label for="label-tempo" class="form-label">Caractere de aquecimento<span style="color: red;">*</span></label>
+        <input type="text" asp-for="CaracterDeAquecimento" class="form-control" placeholder="Exemplo: &">
+    </div>
+
+    <div class="tempo">
+        <label for="label-tempo" class="form-label">Tempo<span style="color: red;">*</span></label>
+        <input type="text" asp-for="TempoEmSegundos" class="form-control" placeholder="Digite o tempo">
+    </div>
+
+
+    <div class="potencia">
+        <br /><label for="label-potencia" class="form-label">Selecione a potência<span style="color: red;">*</span></label> <br />
+        <select class="select-potencia" asp-for="Potencia" aria-label="Default select example">
+            <option selected>10</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Instruções</label>
+        <textarea class="form-control" asp-for="Instrucoes" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a class="btn btn-secondary" role="button" asp-controller="Home" asp-action="VerProgramas">Voltar</a>
+
+</form>

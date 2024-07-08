@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\views\\home\\verprogramas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:views\\home\\verprogramas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VerProgramas.cshtml",
+              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\VerProgramas.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\VerProgramas.cshtml",
+              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\VerProgramas.cshtml",
+              "RelativeToolTip": "Views\\Home\\VerProgramas.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAQwCYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T19:35:31.477Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
