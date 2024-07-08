@@ -59,16 +59,52 @@ namespace Microondas_Digital.Controllers
         [HttpPost]
         public IActionResult CadastrarPrograma(Programas programas)
         {
-            _programaRepositorio.Adicionar(programas);
-            return RedirectToAction("Index");
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _programaRepositorio.Adicionar(programas);
+                    TempData["MensagemSucesso"] = "Programa cadastrado com sucesso";
+                    return RedirectToAction("Index");
+                }
+
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos Editar o Programa, tente novamente, detalhe do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
+
+
+            return View(programas);
+
+
         }
        
         [HttpPost]
         public IActionResult AlterarPrograma(Programas programas)
         {
-            _programaRepositorio.Atualizar(programas);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _programaRepositorio.Atualizar(programas);
+                    TempData["MensagemSucesso"] = "Programa editado com sucesso";
+                    return RedirectToAction("Index");
+                }
+
+                return View("EditarPrograma", programas);
+
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos Editar o Programa, tente novamente, detalhe do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
+
         }
+        
 
 
 

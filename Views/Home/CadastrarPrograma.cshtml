@@ -13,19 +13,23 @@
     <div class="tempo">
         <label for="label-tempo" class="form-label">Nome<span style="color: red;">*</span></label>
         <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o Nome">
+        @Html.ValidationMessageFor(x => x.Nome)
     </div>
     <div class="tempo">
         <label for="label-tempo" class="form-label">Alimento<span style="color: red;">*</span></label>
         <input type="text" asp-for="Comida" class="form-control" placeholder="Digite o Alimento">
+        @Html.ValidationMessageFor(x => x.Comida)
     </div>
     <div class="tempo">
         <label for="label-tempo" class="form-label">Caractere de aquecimento<span style="color: red;">*</span></label>
         <input type="text" asp-for="CaracterDeAquecimento" class="form-control" placeholder="Exemplo: &">
+        @Html.ValidationMessageFor(x => x.CaracterDeAquecimento)
     </div>
 
     <div class="tempo">
         <label for="label-tempo" class="form-label">Tempo<span style="color: red;">*</span></label>
         <input type="text" asp-for="TempoEmSegundos" class="form-control" placeholder="Digite o tempo">
+        @Html.ValidationMessageFor(x => x.TempoEmSegundos)
     </div>
 
 
