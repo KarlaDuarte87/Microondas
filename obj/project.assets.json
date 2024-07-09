@@ -4112,11 +4112,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Microondas-Digital.csproj",
+      "projectUniqueName": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\Microondas\\Microondas-Digital.csproj",
       "projectName": "Microondas-Digital",
-      "projectPath": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Microondas-Digital.csproj",
+      "projectPath": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\Microondas\\Microondas-Digital.csproj",
       "packagesPath": "C:\\Users\\Karla Duarte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\obj\\",
+      "outputPath": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\Microondas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Karla Duarte\\AppData\\Roaming\\NuGet\\NuGet.Config",

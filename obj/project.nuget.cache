@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DaZxiZR4u8vD1iU6lJ9DBt7gEA3OJpNLkU8611FEnU2oLBwJybBr+YfQ3MqVeXFNZBZOlprSikMqQcbrvvAPzQ==",
+  "dgSpecHash": "AF7gY9Sk3quU18V98NY1nnGW58QQ/SVu+1TX81icSB61eyifvtZyJlToWlHsWYitE+lEdOutrjAqyDB1Lsd3lw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Microondas-Digital.csproj",
+  "projectFilePath": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\Microondas\\Microondas-Digital.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Karla Duarte\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Karla Duarte\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
