@@ -1,0 +1,9 @@
+﻿@model Microondas_Digital.Models.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Erro";
+}
+
+<h2 class="text-danger">@ViewData["Title"]</h2>
+<p class="text-danger">@ViewBag.ErrorMessage</p>
+<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Voltar</a>

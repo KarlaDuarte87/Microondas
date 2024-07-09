@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\views\\home\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:views\\home\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\views\\home\\aquecimentoiniciado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:views\\home\\aquecimentoiniciado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\views\\home\\apagarconfirmacao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:views\\home\\apagarconfirmacao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\models\\microondas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:models\\microondas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|c:\\users\\karla duarte\\desktop\\programacao\\microondas-digital\\microondas-digital\\views\\home\\verprogramas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{70474923-2387-4D29-8B4F-1442858315FA}|Microondas-Digital.csproj|solutionrelative:views\\home\\verprogramas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,53 +38,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "Models\\ErrorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T22:33:15.944Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAswFIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T22:31:59.072Z",
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\Error.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\Error.cshtml",
+              "RelativeToolTip": "Views\\Home\\Error.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-09T00:44:15.165Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "VerProgramas.cshtml",
-              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\VerProgramas.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\VerProgramas.cshtml",
-              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\VerProgramas.cshtml",
-              "RelativeToolTip": "Views\\Home\\VerProgramas.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABoAAAAAAAAA",
+              "Title": "ApagarConfirmacao.cshtml",
+              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\ApagarConfirmacao.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\ApagarConfirmacao.cshtml",
+              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\ApagarConfirmacao.cshtml",
+              "RelativeToolTip": "Views\\Home\\ApagarConfirmacao.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-08T22:19:08.835Z"
+              "WhenOpened": "2024-07-09T00:44:07.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAHEAAAAAAAAAAAA7wHwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T00:03:51.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Error.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T23:21:26.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AquecimentoIniciado.cshtml",
+              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\AquecimentoIniciado.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\AquecimentoIniciado.cshtml",
+              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\AquecimentoIniciado.cshtml",
+              "RelativeToolTip": "Views\\Home\\AquecimentoIniciado.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T23:16:07.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T23:11:10.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Microondas.cs",
+              "DocumentMoniker": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Models\\Microondas.cs",
+              "RelativeDocumentMoniker": "Models\\Microondas.cs",
+              "ToolTip": "C:\\Users\\Karla Duarte\\Desktop\\Programacao\\microondas-digital\\Microondas-Digital\\Models\\Microondas.cs",
+              "RelativeToolTip": "Models\\Microondas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T23:07:52.061Z",
+              "EditorCaption": ""
             }
           ]
         }

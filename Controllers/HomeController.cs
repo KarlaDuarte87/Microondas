@@ -104,7 +104,34 @@ namespace Microondas_Digital.Controllers
             }
 
         }
+
+
+
+
+     
+         
+            [HttpPost]
+            public IActionResult IniciarAquecimento(int tempoEmSegundos, int potencia = 10)
+            {
+                try
+                {
+                    var microondas = new Microondas();
+                    microondas.IniciarAquecimento(tempoEmSegundos, potencia);
+                    ViewBag.Message = $"Aquecimento iniciado por {tempoEmSegundos} segundos na potência {potencia}.";
+                    return View("AquecimentoIniciado");
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    ViewBag.ErrorMessage = ex.Message;
+                    return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+                }
+            }
         
+
+
+
+
+
 
 
 

@@ -1,18 +1,22 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Microondas Digital";
 }
 <div class="text-center">
-    <form>
+    <form asp-action="IniciarAquecimento" method="post">
         <div class="tempo">
-            <label for="label-tempo" class="form-label">Tempo</label>
-            <input type="text" class="form-control" placeholder="Digite o tempo">
+            <label for="tempoEmSegundos" class="form-label">Tempo (em segundos)</label>
+            <input type="number" class="form-control" id="tempoEmSegundos" name="tempoEmSegundos" placeholder="Digite o tempo" required>
+        </div>
+
+        <div class="tempo-formatado">
+            <label for="tempoFormatado" class="form-label">Tempo Formatado</label>
+            <input type="text" class="form-control" id="tempoFormatado" placeholder="Tempo formatado" readonly>
         </div>
 
         <div class="potencia">
-            <br /><label for="label-potencia" class="form-label">Selecione a potência</label> <br />
-            <select class="select-potencia" aria-label="Default select example">
-                <option selected>10</option>
+            <br /><label for="potencia" class="form-label">Selecione a potência</label> <br />
+            <select class="select-potencia form-control" name="potencia" aria-label="Default select example">
+                <option value="10" selected>10</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -26,24 +30,46 @@
         </div>
 
         <div class="programa">
-            <br /><label for="label-programa" class="form-label">Selecione o Programa</label><br />
-            <select class="select-programa" aria-label="Default select example">
-                <option value="1">Pipoca</option>
-                <option value="2">Leite</option>
-                <option value="3">Carnes de boi</option>
-                <option value="4">Frango</option>
-                <option value="5">Feijão</option>
-                <option value="6"></option>
+            <br /><label for="programa" class="form-label">Selecione o Programa</label><br />
+            <select class="select-programa form-control" name="programa" aria-label="Default select example">
+                <option value="Pipoca">Pipoca</option>
+                <option value="Leite">Leite</option>
+                <option value="Carnes de boi">Carnes de boi</option>
+                <option value="Frango">Frango</option>
+                <option value="Feijão">Feijão</option>
+                <option value=""></option>
             </select>
         </div>
 
         <div class="d-grid gap-2">
-            <br /><button class="btn btn-warning" type="button">Iniciar/+30s</button>
+            <br /><button class="btn btn-warning" type="submit">Iniciar/+30s</button>
             <button class="btn btn-danger" type="button">Cancelar/Pausar</button>
             <a class="btn btn-success" role="button" asp-controller="Home" asp-action="VerProgramas">Ver Programas</a>
             <a class="btn btn-primary" role="button" asp-controller="Home" asp-action="CadastrarPrograma">Cadastrar Programas</a>
         </div>
     </form>
-   
 </div>
 
+@section Scripts {
+    <script>
+        document.getElementById('tempoEmSegundos').addEventListener('input', function () {
+            var tempoEmSegundos = parseInt(this.value, 10);
+            var tempoFormatado = formatTime(tempoEmSegundos);
+            document.getElementById('tempoFormatado').value = tempoFormatado;
+        });
+
+        function formatTime(tempoEmSegundos) {
+            if (isNaN(tempoEmSegundos) || tempoEmSegundos < 0) {
+                return '';
+            }
+
+            if (tempoEmSegundos < 60) {
+                return tempoEmSegundos + ' segundos';
+            } else {
+                var minutos = Math.floor(tempoEmSegundos / 60);
+                var segundos = tempoEmSegundos % 60;
+                return minutos + ':' + (segundos < 10 ? '0' : '') + segundos + ' minutos';
+            }
+        }
+    </script>
+}
