@@ -51,8 +51,18 @@ namespace Microondas_Digital.Controllers
 
         public IActionResult Apagar(int id)
         {
-            _programaRepositorio.Apagar(id);
-            return RedirectToAction("VerProgramas");
+            try
+            {
+                _programaRepositorio.Apagar(id);
+                TempData["MensagemSucesso"] = "Programa apagado com sucesso";
+                return RedirectToAction("VerProgramas");
+            }
+            catch (System.Exception erro)
+            {
+               TempData["MensagemErro"] = $"Ops, não conseguimos realizar essa ação, tente novamente, detalhe do erro: {erro.Message}";
+               return RedirectToAction("VerProgramas");
+            }
+           
         }
 
         [HttpPost]
@@ -64,13 +74,15 @@ namespace Microondas_Digital.Controllers
                 {
                     _programaRepositorio.Adicionar(programas);
                     TempData["MensagemSucesso"] = "Programa cadastrado com sucesso";
-                    return RedirectToAction("Index");
+                    //return RedirectToAction("Index");
+                    
+
                 }
             }
             catch (System.Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos Editar o Programa, tente novamente, detalhe do erro: {erro.Message}";
-                return RedirectToAction("Index");
+                //return RedirectToAction("VerProgramas");
             }
 
             return View(programas);
@@ -85,7 +97,6 @@ namespace Microondas_Digital.Controllers
                 {
                     _programaRepositorio.Atualizar(programas);
                     TempData["MensagemSucesso"] = "Programa editado com sucesso";
-                    return RedirectToAction("Index");
                 }
 
                 return View("EditarPrograma", programas);
@@ -93,7 +104,7 @@ namespace Microondas_Digital.Controllers
             catch (System.Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos Editar o Programa, tente novamente, detalhe do erro: {erro.Message}";
-                return RedirectToAction("Index");
+                return RedirectToAction("VerProgramas");
             }
         }
 
@@ -108,17 +119,14 @@ namespace Microondas_Digital.Controllers
                 var microondas = new Microondas();
                 microondas.IniciarAquecimento(tempo, power);
 
-                // Gerar a string informativa do processo de aquecimento
                 StringBuilder processo = new StringBuilder();
                 for (int i = 0; i < tempo; i++)
                 {
                     processo.Append(new string('.', power));
                     processo.Append(' ');
 
-                    // Simular o delay do aquecimento real
                     await Task.Delay(1000);
 
-                    // Retornar a string atualizada para o cliente
                     return Json(new { processo = processo.ToString() });
                 }
                 processo.Append("Aquecimento concluído.");

@@ -53,7 +53,7 @@ namespace Microondas_Digital.Repositorio
             Programas programaDB = ListarPorId(id);
 
             if (programaDB == null) throw new System.Exception("Houve um erro ao deletar o programa");
-
+            if (programaDB.Customizado == false) throw new System.Exception("Não é possíel apagar programa padrão");
 
             _bancoContext.Programas.Remove(programaDB);
             _bancoContext.SaveChanges();

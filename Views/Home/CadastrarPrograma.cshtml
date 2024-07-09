@@ -9,6 +9,26 @@
 </div>
 
 
+@if(TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-info" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+
+}
+
+
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+
 <form asp-controller="Home" asp-action="CadastrarPrograma" method="post">
     <div class="tempo">
         <label for="label-tempo" class="form-label">Nome<span style="color: red;">*</span></label>
@@ -48,6 +68,9 @@
             <option value="9">9</option>
         </select>
     </div>
+
+    <input type="hidden" asp-for="Customizado" value="true" />
+
 
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Instruções</label>
