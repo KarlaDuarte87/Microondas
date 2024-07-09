@@ -2,6 +2,8 @@ using Microondas_Digital.Models;
 using Microondas_Digital.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Microondas_Digital.Controllers
 {
@@ -15,7 +17,8 @@ namespace Microondas_Digital.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var programas = _programaRepositorio.BuscarTodos().Select(p => p.Nome).ToList();
+            return View(programas ?? new List<string>());
         }
 
         public IActionResult Privacy()
@@ -29,7 +32,6 @@ namespace Microondas_Digital.Controllers
             return View(programas);
         }
 
-
         public IActionResult CadastrarPrograma()
         {
             return View();
@@ -41,14 +43,11 @@ namespace Microondas_Digital.Controllers
             return View(programa);
         }
 
-
         public IActionResult ApagarConfirmacao(int id)
         {
             Programas programa = _programaRepositorio.ListarPorId(id);
-
             return View(programa);
         }
-
 
         public IActionResult Apagar(int id)
         {
@@ -59,7 +58,6 @@ namespace Microondas_Digital.Controllers
         [HttpPost]
         public IActionResult CadastrarPrograma(Programas programas)
         {
-
             try
             {
                 if (ModelState.IsValid)
@@ -68,7 +66,6 @@ namespace Microondas_Digital.Controllers
                     TempData["MensagemSucesso"] = "Programa cadastrado com sucesso";
                     return RedirectToAction("Index");
                 }
-
             }
             catch (System.Exception erro)
             {
@@ -76,12 +73,9 @@ namespace Microondas_Digital.Controllers
                 return RedirectToAction("Index");
             }
 
-
             return View(programas);
-
-
         }
-       
+
         [HttpPost]
         public IActionResult AlterarPrograma(Programas programas)
         {
@@ -95,46 +89,51 @@ namespace Microondas_Digital.Controllers
                 }
 
                 return View("EditarPrograma", programas);
-
             }
             catch (System.Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos Editar o Programa, tente novamente, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
-
         }
 
+        [HttpPost]
+        public async Task<IActionResult> IniciarAquecimento(int? tempoEmSegundos, int? potencia)
+        {
+            int tempo = tempoEmSegundos ?? 30;
+            int power = potencia ?? 10;
 
-
-
-     
-         
-            [HttpPost]
-            public IActionResult IniciarAquecimento(int tempoEmSegundos, int potencia = 10)
+            try
             {
-                try
+                var microondas = new Microondas();
+                microondas.IniciarAquecimento(tempo, power);
+
+                // Gerar a string informativa do processo de aquecimento
+                StringBuilder processo = new StringBuilder();
+                for (int i = 0; i < tempo; i++)
                 {
-                    var microondas = new Microondas();
-                    microondas.IniciarAquecimento(tempoEmSegundos, potencia);
-                    ViewBag.Message = $"Aquecimento iniciado por {tempoEmSegundos} segundos na potência {potencia}.";
-                    return View("AquecimentoIniciado");
+                    processo.Append(new string('.', power));
+                    processo.Append(' ');
+
+                    // Simular o delay do aquecimento real
+                    await Task.Delay(1000);
+
+                    // Retornar a string atualizada para o cliente
+                    return Json(new { processo = processo.ToString() });
                 }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    ViewBag.ErrorMessage = ex.Message;
-                    return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-                }
+                processo.Append("Aquecimento concluído.");
+
+                ViewBag.Message = $"Aquecimento iniciado por {tempo} segundos na potência {power}.";
+                ViewBag.Processo = processo.ToString();
+
+                return Json(new { processo = processo.ToString(), message = ViewBag.Message });
             }
-        
-
-
-
-
-
-
-
-
+            catch (ArgumentOutOfRangeException ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -33,13 +33,13 @@ namespace Microondas_Digital.Repositorio
             Programas programaDB = ListarPorId(programa.Id);
 
             if (programaDB == null) throw new System.Exception("Houve um erro na atualização do programa!");
-
+            if (programaDB.Customizado == false) throw new System.Exception("Não é possíel atualizar programa padrão");
             programaDB.Nome = programa.Nome;
             programaDB.Comida = programa.Comida;
             programaDB.TempoEmSegundos = programa.TempoEmSegundos;
             programaDB.CaracterDeAquecimento = programa.CaracterDeAquecimento;
             programaDB.Potencia = programa.Potencia;
-           // programaDB.Customizado =;
+            programaDB.Customizado = true;
 
 
             _bancoContext.Programas.Update(programaDB);

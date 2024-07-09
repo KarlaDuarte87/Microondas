@@ -1,11 +1,13 @@
-﻿@{
+﻿@model List<string>
+
+@{
     ViewData["Title"] = "Microondas Digital";
 }
 <div class="text-center">
-    <form asp-action="IniciarAquecimento" method="post">
+    <form id="aquecimentoForm" asp-action="IniciarAquecimento" method="post">
         <div class="tempo">
             <label for="tempoEmSegundos" class="form-label">Tempo (em segundos)</label>
-            <input type="number" class="form-control" id="tempoEmSegundos" name="tempoEmSegundos" placeholder="Digite o tempo" required>
+            <input type="number" class="form-control" id="tempoEmSegundos" name="tempoEmSegundos" placeholder="Digite o tempo">
         </div>
 
         <div class="tempo-formatado">
@@ -32,22 +34,28 @@
         <div class="programa">
             <br /><label for="programa" class="form-label">Selecione o Programa</label><br />
             <select class="select-programa form-control" name="programa" aria-label="Default select example">
-                <option value="Pipoca">Pipoca</option>
-                <option value="Leite">Leite</option>
-                <option value="Carnes de boi">Carnes de boi</option>
-                <option value="Frango">Frango</option>
-                <option value="Feijão">Feijão</option>
-                <option value=""></option>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var programa in Model)
+                    {
+                        <option value="@programa">@programa</option>
+                    }
+                }
+                else
+                {
+                    <option value="">Nenhum programa disponível</option>
+                }
             </select>
         </div>
 
         <div class="d-grid gap-2">
-            <br /><button class="btn btn-warning" type="submit">Iniciar/+30s</button>
+            <br /><button id="iniciarAquecimento" class="btn btn-warning" type="button">Iniciar/+30s</button>
             <button class="btn btn-danger" type="button">Cancelar/Pausar</button>
             <a class="btn btn-success" role="button" asp-controller="Home" asp-action="VerProgramas">Ver Programas</a>
             <a class="btn btn-primary" role="button" asp-controller="Home" asp-action="CadastrarPrograma">Cadastrar Programas</a>
         </div>
     </form>
+    <div id="processo"></div>
 </div>
 
 @section Scripts {
@@ -71,5 +79,24 @@
                 return minutos + ':' + (segundos < 10 ? '0' : '') + segundos + ' minutos';
             }
         }
+
+        document.getElementById('iniciarAquecimento').addEventListener('click', function () {
+            var form = document.getElementById('aquecimentoForm');
+            var formData = new FormData(form);
+            var url = form.action;
+
+            fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('processo').innerText = data.processo;
+                    if (data.message) {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
     </script>
 }
