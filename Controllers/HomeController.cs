@@ -15,7 +15,9 @@ namespace Microondas_Digital.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var programas = _programaRepositorio.BuscarTodos().Select(p => p.Nome).ToList();
+            
+            return View(programas ?? new List<string>());
         }
 
         public IActionResult Privacy()
@@ -106,35 +108,27 @@ namespace Microondas_Digital.Controllers
         }
 
 
+        [HttpPost]
+        public IActionResult IniciarAquecimento(int? tempoEmSegundos, int? potencia)
+        {
+           
+            int tempo = tempoEmSegundos ?? 30;
+            int power = potencia ?? 10;
 
-
-     
-         
-            [HttpPost]
-            public IActionResult IniciarAquecimento(int tempoEmSegundos, int potencia = 10)
+            try
             {
-                try
-                {
-                    var microondas = new Microondas();
-                    microondas.IniciarAquecimento(tempoEmSegundos, potencia);
-                    ViewBag.Message = $"Aquecimento iniciado por {tempoEmSegundos} segundos na potência {potencia}.";
-                    return View("AquecimentoIniciado");
-                }
-                catch (ArgumentOutOfRangeException ex)
-                {
-                    ViewBag.ErrorMessage = ex.Message;
-                    return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-                }
+                var microondas = new Microondas();
+                microondas.IniciarAquecimento(tempo, power);
+                ViewBag.Message = $"Aquecimento iniciado por {tempo} segundos na potência {power}.";
+                return View("AquecimentoIniciado");
             }
-        
-
-
-
-
-
-
-
-
+            catch (ArgumentOutOfRangeException ex)
+            {
+                
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

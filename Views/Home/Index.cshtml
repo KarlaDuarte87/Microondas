@@ -1,11 +1,13 @@
-﻿@{
+﻿@model List<string>
+
+@{
     ViewData["Title"] = "Microondas Digital";
 }
 <div class="text-center">
     <form asp-action="IniciarAquecimento" method="post">
         <div class="tempo">
             <label for="tempoEmSegundos" class="form-label">Tempo (em segundos)</label>
-            <input type="number" class="form-control" id="tempoEmSegundos" name="tempoEmSegundos" placeholder="Digite o tempo" required>
+            <input type="number" class="form-control" id="tempoEmSegundos" name="tempoEmSegundos" placeholder="Digite o tempo">
         </div>
 
         <div class="tempo-formatado">
@@ -32,12 +34,10 @@
         <div class="programa">
             <br /><label for="programa" class="form-label">Selecione o Programa</label><br />
             <select class="select-programa form-control" name="programa" aria-label="Default select example">
-                <option value="Pipoca">Pipoca</option>
-                <option value="Leite">Leite</option>
-                <option value="Carnes de boi">Carnes de boi</option>
-                <option value="Frango">Frango</option>
-                <option value="Feijão">Feijão</option>
-                <option value=""></option>
+                @foreach (var programa in Model)
+                {
+                    <option value="@programa">@programa</option>
+                }
             </select>
         </div>
 
