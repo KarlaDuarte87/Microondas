@@ -59,10 +59,10 @@ namespace Microondas_Digital.Controllers
             }
             catch (System.Exception erro)
             {
-               TempData["MensagemErro"] = $"Ops, não conseguimos realizar essa ação, tente novamente, detalhe do erro: {erro.Message}";
-               return RedirectToAction("VerProgramas");
+                TempData["MensagemErro"] = $"Ops, não conseguimos realizar essa ação, tente novamente, detalhe do erro: {erro.Message}";
+                return RedirectToAction("VerProgramas");
             }
-           
+
         }
 
         [HttpPost]
@@ -75,7 +75,7 @@ namespace Microondas_Digital.Controllers
                     _programaRepositorio.Adicionar(programas);
                     TempData["MensagemSucesso"] = "Programa cadastrado com sucesso";
                     //return RedirectToAction("Index");
-                    
+
 
                 }
             }
@@ -109,41 +109,48 @@ namespace Microondas_Digital.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> IniciarAquecimento(int? tempoEmSegundos, int? potencia)
+        public async IAsyncEnumerable<string> IniciarAquecimento(int? tempoEmSegundos, int? potencia)
         {
             int tempo = tempoEmSegundos ?? 30;
             int power = potencia ?? 10;
+            StringBuilder processo = new StringBuilder();
+            var microondas = new Microondas();
 
-            try
+
+            if (tempo <= 1 || tempo > 120)
             {
-                var microondas = new Microondas();
-                microondas.IniciarAquecimento(tempo, power);
+                processo.Append("O tempo deve estar entre 1 segundo e 2 minutos (120 segundos).");
+                yield return processo.ToString();
 
-                StringBuilder processo = new StringBuilder();
-                for (int i = 0; i < tempo; i++)
-                {
-                    processo.Append(new string('.', power));
-                    processo.Append(' ');
-
-                    await Task.Delay(1000);
-
-                    return Json(new { processo = processo.ToString() });
-                }
-                processo.Append("Aquecimento concluído.");
-
-                ViewBag.Message = $"Aquecimento iniciado por {tempo} segundos na potência {power}.";
-                ViewBag.Processo = processo.ToString();
-
-                return Json(new { processo = processo.ToString(), message = ViewBag.Message });
+                yield break;
             }
-            catch (ArgumentOutOfRangeException ex)
+
+
+
+            microondas.IniciarAquecimento(tempo, power);
+
+            
+            for (int i = 0; i < tempo; i++)
             {
-                ViewBag.ErrorMessage = ex.Message;
-                return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
+                processo.Append(new string('.', power));
+                processo.Append(' ');
+
+                yield return processo.ToString();
+
+                await Task.Delay(1000);
+
             }
+            processo.Clear();
+
+            processo.Append("Aquecimento concluído!");
+            yield return processo.ToString();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    
+
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

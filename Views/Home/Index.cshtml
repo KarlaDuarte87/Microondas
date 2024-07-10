@@ -5,6 +5,8 @@
 }
 <div class="text-center">
     <form id="aquecimentoForm" asp-action="IniciarAquecimento" method="post">
+        <div id="processo"></div>
+        <br />
         <div class="tempo">
             <label for="tempoEmSegundos" class="form-label">Tempo (em segundos)</label>
             <input type="number" class="form-control" id="tempoEmSegundos" name="tempoEmSegundos" placeholder="Digite o tempo">
@@ -55,8 +57,27 @@
             <a class="btn btn-primary" role="button" asp-controller="Home" asp-action="CadastrarPrograma">Cadastrar Programas</a>
         </div>
     </form>
-    <div id="processo"></div>
+    
 </div>
+
+
+<style>
+    #processo {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1em;
+        background-color: black;
+        color: limegreen;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid limegreen;
+        margin-top: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+</style>
 
 @section Scripts {
     <script>
@@ -80,6 +101,7 @@
             }
         }
 
+
         document.getElementById('iniciarAquecimento').addEventListener('click', function () {
             var form = document.getElementById('aquecimentoForm');
             var formData = new FormData(form);
@@ -89,14 +111,37 @@
                 method: 'POST',
                 body: formData
             })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('processo').innerText = data.processo;
-                    if (data.message) {
-                        alert(data.message);
+                .then(response => {
+                    const reader = response.body.getReader();
+                    const decoder = new TextDecoder("utf-8");
+
+                    let finalProcess = '';
+
+                    function readStream() {
+                        reader.read().then(({ done, value }) => {
+                            if (done) {
+                                console.log('Stream finished.');
+                                document.getElementById('processo').innerText = finalProcess.trim();
+                                return;
+                            }
+
+                            const text = decoder.decode(value, { stream: true });
+
+                            document.getElementById('processo').innerText = text;
+
+                            finalProcess = text;
+
+                            readStream();
+                        }).catch(error => {
+                            console.error('Stream reading error:', error);
+                        });
                     }
+
+                    readStream();
                 })
                 .catch(error => console.error('Error:', error));
         });
+
+
     </script>
 }
